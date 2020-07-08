@@ -1,0 +1,29 @@
+{
+    "name": "js-http-errors",
+    "version": "1.0.0",
+    "description": "Best Practices for Http Api Error Response Handling",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dodoru/js-http-errors.git"
+    },
+    "keywords": [
+        "ApiError",
+        "status-code",
+        "json-response",
+        "http",
+        "api",
+        "error",
+        "nodejs"
+    ],
+    "author": "Nico Ning <dodoru@foxmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dodoru/js-http-errors/issues"
+    },
+    "homepage": "https://github.com/dodoru/js-http-errors#readme",
+    "dependencies": {}
+}
