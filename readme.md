@@ -53,35 +53,38 @@ let e8 = http_errors.apiError(401);
 console.log(e7.responseData());
 /*
 {
-  code: 40100,
-  error: 'User Require Login',
-  request_id: 'X6822759T8242827'
+    code: 40100,
+    error: 'User Require Login',
+    request_id: 'X6822759T8242827'
 }
 */
+
 console.log(e8.responseDataV2());
 /*
 {
-  request_id: 'X6822759T5B7U3TR',
-  error: {
-    name: 'ApiError',
-    errno: 40100,
-    message: 'Unauthorized',
-    trackError: null
+    request_id: 'X6822759T5B7U3TR',
+    error: {
+        name: 'ApiError',
+        errno: 40100,
+        message: 'Unauthorized',
+        trackError: null
   }
 }
 */
 
 
-// 2. suggest to use `apiError` or `apiError.new`, avoid to renew ApiError 
+// 2. suggest to use `apiError` or `apiError.new`, avoid to renew ApiError duplicated 
 let e9 = http_errors.apiError({errno:40102, message:"require re-login"});
-let e10 = http_errors.apiError(e9);     // e9 === e10
+let e10 = http_errors.apiError(e9);     
+// e9 === e10 , while e9 !== new http_errors.ApiError(e9)
 
 
-
-// 4. throw Error immediately by `abort`
-http_errors.abort(401);                 // equal to: `http_errors.abort(40100);`
+// 3. throw Error immediately by `abort`
+http_errors.abort(401);                 
+// equal to: `http_errors.abort(40100);`
 
 let err = new Error("Local Error")
-http_errors.abort(403, err);            // equal to: `http_errors.abort({status:403, trackError:err});`         
+http_errors.abort(403, err);            
+// equal to: `http_errors.abort({status:403, trackError:err});`         
  
 ```
