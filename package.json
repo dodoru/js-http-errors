@@ -25,5 +25,8 @@
         "url": "https://github.com/dodoru/js-http-errors/issues"
     },
     "homepage": "https://github.com/dodoru/js-http-errors#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/@dodoru"
+    },
     "dependencies": {}
 }
